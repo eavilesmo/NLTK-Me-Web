@@ -1,0 +1,36 @@
+<html>
+    <head>
+    <title>NTLK-Me!</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- <link rel="stylesheet" type="text/css" href="/static/my_css.css"> -->
+    </head>
+    <h2 style="text-align:center">Tokenize a Text</h2>
+    <body>
+        <style>
+            .custom-row {
+                background-color: #E6BDFC;
+                margin: auto;
+                height: 400px;
+                width: 25%;
+            }
+        </style>
+
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+        <div class="row custom-row align-items-center">
+            <label for="formFile" class="form-label">Please select the text you want to tokenize:</label>
+            <input class="form-control" name="send_button" type="file" id="formFile">
+            <input type="submit" name="send" class="btn btn-primary" value="Send">
+            <button type="button" class="btn btn-secondary" onclick="window.location.href='/home'">Home</button>
+          </div>
+        </form>
+        <!-- <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="mb-3">
+            </div>
+            <input type="submit" name="send" value="Tokenize!">
+            <input class="form-control" name="send_button" type="file" id="formFile">
+        </form> -->
+    </body>
+</html>
