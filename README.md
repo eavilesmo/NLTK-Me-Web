@@ -40,7 +40,7 @@ Note: step 2 and onwards must be executed from the terminal, possibly requiring 
 
 Welcome Page
 
-![Welcome Page] (https://github.com/eavilesmo/NLTK-Me-Web/blob/main/welcome.jpg?raw=true)
+![Welcome Page] (https://raw.githubusercontent.com/eavilesmo/NLTK-Me-Web/main/welcome.jpg)
 
 Home Page
 
