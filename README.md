@@ -40,19 +40,19 @@ Note: step 2 and onwards must be executed from the terminal, possibly requiring 
 
 Welcome Page
 
-![welcome.png](https://user-images.githubusercontent.com/72768790/158059889-c1f5e397-4ae3-4d78-a85f-0476abb30d0d.png)
+![Welcome Page] (welcome.png)
 
 Home Page
 
-![home.png](https://user-images.githubusercontent.com/72768790/158059893-2bfcd1bd-47fa-4696-887f-e584aef4abe9.png)
+![Home Page] (home.png)
 
 Tokenize A Text Page
 
-![tok-text-screenshot.png](https://user-images.githubusercontent.com/72768790/158059894-9a8a8a15-5bb1-4b90-a68b-8417e3c10285.png)
+![Tokenize A Text Page] (tok-text-screenshot.png)
 
 Total Count of Words Page
 
-![count-total-screenshot.png](https://user-images.githubusercontent.com/72768790/158059894-9a8a8a15-5bb1-4b90-a68b-8417e3c10285.png)
+![Total Count of Words Page] (count-total-screenshot.png)
 
 ## Next Steps
 - Implement unit testing with Unittest or Pytest
