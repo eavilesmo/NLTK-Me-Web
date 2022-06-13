@@ -40,19 +40,19 @@ Note: step 2 and onwards must be executed from the terminal, possibly requiring 
 
 Welcome Page
 
-![Welcome Page] (welcome.png)
+![Welcome Page] (https://github.com/eavilesmo/NLTK-Me-Web/blob/main/welcome.jpg?raw=true)
 
 Home Page
 
-![Home Page] (home.png)
+![Home Page] (https://github.com/eavilesmo/NLTK-Me-Web/blob/main/home.jpg?raw=true)
 
 Tokenize A Text Page
 
-![Tokenize A Text Page] (tok-text-screenshot.png)
+![Tokenize A Text Page] (https://github.com/eavilesmo/NLTK-Me-Web/blob/main/tok-text-screenshot.jpg?raw=true)
 
 Total Count of Words Page
 
-![Total Count of Words Page] (count-total-screenshot.png)
+![Total Count of Words Page] (https://github.com/eavilesmo/NLTK-Me-Web/blob/main/count-total-screenshot.jpg?raw=true)
 
 ## Next Steps
 - Implement unit testing with Unittest or Pytest
