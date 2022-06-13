@@ -40,7 +40,7 @@ Note: step 2 and onwards must be executed from the terminal, possibly requiring 
 
 Welcome Page
 
-![Welcome Page] (https://raw.githubusercontent.com/eavilesmo/NLTK-Me-Web/main/welcome.jpg)
+![Welcome Page] (https://raw.githubusercontent.com/eavilesmo/NLTK-Me-Web/main/welcome.png)
 
 Home Page
 
@@ -48,7 +48,7 @@ Home Page
 
 Tokenize A Text Page
 
-![Tokenize A Text Page] (https://github.com/eavilesmo/NLTK-Me-Web/blob/main/tok-text-screenshot.jpg?raw=true)
+![Tokenize A Text Page] (https://github.com/eavilesmo/NLTK-Me-Web/blob/main/tok-text-screenshot.png)
 
 Total Count of Words Page
 
