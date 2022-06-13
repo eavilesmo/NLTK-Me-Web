@@ -16,11 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from .views import home, tok_text, welcome
+from .views import home, welcome, tok_text, tok_sent, stopwords, total_words, count_one, count_max
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('welcome', welcome),
     path('home/', home),
-    path('tok-text/', tok_text)
+    path('tok-text/', tok_text),
+    path('tok-sent/', tok_sent),
+    path('stopwords/', stopwords),
+    path('count-total/', total_words),
+    path('count-one/', count_one),
+    path('count-max/', count_max)
 ]

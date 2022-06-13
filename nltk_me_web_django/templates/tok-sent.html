@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>{{ dict_EN.web_title }}</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="/static/my_css.css">
+    </head>
+    <body>
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="background_option">
+                <div class="heading_option">
+                    <h1>{{ dict_EN.button_tok_sent }}</h1>
+                </div>
+                <div class="column-container_option">
+                    <div class="information_option">
+                        <h5>{{ dict_EN.information_title }}</h5>
+                        <p>{{ dict_EN.tok_sentence_description }}</p>
+                        <img src="/static/tok-sent.png"alt="..." height="200px" width="410px">
+                    </div>
+                    <div class="select-file_option">
+                        <label for="select-file" class="form-label">{{ dict_EN.select_file }}</label>
+                        <input class="form-control" name="send_button" type="file" accept=".txt" id="select-file">
+                    </div>
+                    <div class="save-file_option">
+                        <label for="save-file">{{ dict_EN.name_file }}</label>
+                        <input type="text" id="save-file" name="save-file">
+                    </div>
+                    <div class="button-send">
+                        <input type="submit" name="send" class="btn" value={{ dict_EN.send_button_tok }}>
+                    </div>
+                    <div class="button-home">
+                        <button type="button" class="btn" onclick="window.location.href='/home'">{{ dict_EN.back_home }}</button>
+                    </div>
+                    <div class="results_option">
+                        <h5>{{ dict_EN.result_title }}</h5>
+                        {{ result }}
+                    </div>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>

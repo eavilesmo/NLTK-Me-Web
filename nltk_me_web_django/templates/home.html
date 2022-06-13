@@ -1,157 +1,88 @@
 <html>
     <head>
-    <title>NTLK-Me!</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <!-- <link rel="stylesheet" type="text/css" href="/static/my_css.css"> -->
+        <title>{{ dict_EN.web_title }}</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="/static/my_css.css">
     </head>
     <body>
-        <style>
-            .custom-row {
-                border-radius: 15px;
-                height: 800px;
-                width: 75%;
-            }
-
-            .color1 {
-                background-color: #FFCDDD;
-                height: 100%;
-                padding: 50px 50px;
-            }
-
-            .color2 {
-                background-color: #EA99D5;
-                margin: auto;
-                border-radius: 15px;
-                height: 90%;
-                width: 75%;
-                padding: 30px 50px;
-                box-shadow: 8px 6px 10px #4E4A4A;
-            }
-
-            .card {
-                margin-top: 10px;
-                box-shadow: 8px 6px 10px #4E4A4A;
-            }
-
-            .card-body {
-                background-color: #8946A6;
-                color: white;
-                font-family: Helvetica;
-            }
-
-            .card-footer {
-                background-color: #B762C1;
-            }
-
-            .btn {
-                font-style: italic;
-                font-weight: bold;
-                color: #000000;
-                background-color: #FFFFFF;
-                box-shadow: 8px 6px 10px #4E4A4A;
-            }
-
-            .column-2 {
-                padding: 30px 50px;
-            }
-
-            h1 {
-                color: white;
-                font-family: Helvetica;
-                font-weight: 700;
-            }
-        </style>
-
-<!-- <h1 style="text-align:center">Welcome to NTLK-Me!</h1> -->
-        <!-- <h4 style="text-align:center">NLTK is a library for Python that allows you to tokenize texts, remove stopwords or count the total words. Here you have a small selection of features. Explore them to know what each of them does!</h4> -->
-        
-<form action="" method="POST">
-    {% csrf_token %}
-    <div class="color1">
-    <div class="color2">
-        <h1 style="text-align:center">Welcome to NTLK-Me!</h1>
-        <div class="column">
-            <div class="card-deck">
-                <div class="card text-center">
-                    <img src="/static/white.png" class="card-img-top" alt="..." height="100px" width="25px">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ dict_EN.button_tok_text }}</h5>
-                        <p class="card-text">Split a text into sentences</p>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="color1_home">
+                <div class="color2_home">
+                    <h1 class="h1_home">{{ dict_EN.home_title }}</h1>
+                    <h5 class="h5_home">{{ dict_EN.home_intro_1 }}</h5>
+                    <h5 class="h5_home">{{ dict_EN.home_intro_2 }}</h5>
+                    <div class="column-1-home">
+                        <div class="card-deck">
+                            <div class="card">
+                                <img src="/static/tok-text.png" class="card-img-top" alt="..." height="150px" width="50px">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ dict_EN.button_tok_text }}</h5>
+                                    <p class="card-text">{{ dict_EN.home_tok_text }}</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="/tok-text" class="btn">{{ dict_EN.home_send }}</a>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="/static/tok-sent.png" class="card-img-top" alt="..." height="150px" width="50px">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ dict_EN.button_tok_sent }}</h5>
+                                    <p class="card-text">{{ dict_EN.home_tok_sent }}</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="/tok-sent" class="btn">{{ dict_EN.home_send }}</a>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="/static/stopwords.png" class="card-img-top" alt="..." height="150px" width="50px">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ dict_EN.button_stopwords }}</h5>
+                                    <p class="card-text">{{ dict_EN.home_stopwords }}</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="/stopwords" class="btn">{{ dict_EN.home_send }}</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-footer">
-                        <a href="/tok-text" class="btn">Go!</a>
-                    </div>
-                </div>
-                <div class="card text-center">
-                    <img src="/static/white.png" class="card-img-top" alt="..." height="100px" width="25px">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ dict_EN.button_tok_sent }}</h5>
-                        <p class="card-text">Split a sentence into words</p>
-                    </div>
-                    <div class="card-footer">
-                        <button type="button" class="btn">Go!</button>
-                    </div>
-                </div>
-                <div class="card text-center">
-                    <img src="/static/white.png" class="card-img-top" alt="..." height="100px" width="25px">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ dict_EN.button_stopwords }}</h5>
-                        <p class="card-text">Remove the stopwords from a text</p>
-                    </div>
-                    <div class="card-footer">
-                        <button type="button" class="btn">Go!</button>
-                    </div>
-                </div>
-                <div class="card text-center">
-                    <img src="/static/white.png" class="card-img-top" alt="..." height="100px" width="25px">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ dict_EN.button_total_words }}</h5>
-                        <p class="card-text">Count the total words in a text</p>
-                    </div>
-                    <div class="card-footer">
-                        <button type="button" class="btn">Go!</button>
+                    <div class="column-2">
+                        <div class="card-deck">
+                            <div class="card">
+                                <img src="/static/count-total.png" class="card-img-top" alt="..." height="150px" width="50px">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ dict_EN.button_total_words }}</h5>
+                                    <p class="card-text">{{ dict_EN.home_count_total }}</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="/count-total" class="btn">{{ dict_EN.home_send }}</a>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="/static/count-one.png" class="card-img-top" alt="..." height="150px" width="50px">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ dict_EN.button_count_one }}</h5>
+                                    <p class="card-text">{{ dict_EN.home_count_one }}</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="/count-one" class="btn">{{ dict_EN.home_send }}</a>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="/static/count-max.png" class="card-img-top" alt="..." height="150px" width="50px">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ dict_EN.button_max }}</h5>
+                                    <p class="card-text">{{ dict_EN.home_max }}</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="/count-max" class="btn">{{ dict_EN.home_send }}</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    
-        <div class="column-2">
-            <div class="card-deck">
-                <div class="card text-center">
-                    <img src="/static/white.png" class="card-img-top" alt="..." height="100px" width="25px">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ dict_EN.button_count }}</h5>
-                        <p class="card-text">Count how many times a word appears in a text</p>
-                    </div>
-                    <div class="card-footer">
-                        <button type="button" class="btn">Go!</button>
-                    </div>
-                </div>
-                <div class="card text-center">
-                    <img src="/static/white.png" class="card-img-top" alt="..." height="100px" width="25px">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ dict_EN.button_max }}</h5>
-                        <p class="card-text">Show the most frequent word in a text</p>
-                    </div>
-                    <div class="card-footer">
-                        <button type="button" class="btn">Go!</button>
-                    </div>
-                </div>
-                <div class="card text-center">
-                    <img src="/static/white.png" class="card-img-top" alt="..." height="100px" width="25px">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ dict_EN.button_plot }}</h5>
-                        <p class="card-text">Show a graph with words's frequency</p>
-                    </div>
-                    <div class="card-footer">
-                        <button type="button" class="btn">Go!</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-</div>
-</div>
-</form>
+        </form>
     </body>
 </html>

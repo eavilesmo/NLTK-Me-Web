@@ -2,8 +2,8 @@
 # Description of the file
 # -----------------------------------------------------------------------------
 
-# The Text_Processing_Tools file hosts all the functions needed for the
-# Main (NLTK-Me!) file.
+# The Text_Processing_Tools file hosts all the functions needed for the views
+# file.
 
 # -----------------------------------------------------------------------------
 # Imports
@@ -44,7 +44,6 @@ stopword_symbols = ["¡", "!", ",", ".", ";", "-", "_", "¿", "?", "(", ")",
 def tokenize_text(get_file_text, filename_path):
     """Text tokenizer - Divides a text into sentences"""
     try:
-        # file_for_tok_text = open(get_file_text, encoding="UTF-8").read()
         tokenized_text = sent_tokenize(get_file_text)
         if len(tokenized_text) <= 0:
             return ErrorCode.EMPTY_FILE_ERROR
@@ -56,12 +55,13 @@ def tokenize_text(get_file_text, filename_path):
             return ErrorCode.NO_ERROR
     except FileNotFoundError:
         return ErrorCode.PATH_ERROR
+    except UnicodeDecodeError:
+        return ErrorCode.UNICODE_ERROR
 
 
 def tokenize_sentence(get_file_sentence, filename_path):
     """Sentence tokenizer - Divides one or more sentences into words"""
     try:
-        # file_for_tok_sentence = open(get_file_sentence, encoding="UTF-8").read()
         tokenized_sentence = word_tokenize(get_file_sentence)
         if len(tokenized_sentence) <= 0:
             return ErrorCode.EMPTY_FILE_ERROR
@@ -80,7 +80,6 @@ def tokenize_sentence(get_file_sentence, filename_path):
 def stopwords_remover(get_file_stopwords, filename_path, stopwords_language):
     """Stopwords remover - Removes the stopwords from a text"""
     try:
-        # file_for_stopwords_remover = open(get_file_stopwords, encoding="UTF-8").read()
         stop_words = set(stopwords.words(stopwords_language))
         tokenized_file = word_tokenize(get_file_stopwords)
         if len(tokenized_file) <= 0:
@@ -100,13 +99,12 @@ def stopwords_remover(get_file_stopwords, filename_path, stopwords_language):
 def total_words_count(get_file_twords):
     """Total words - Shows how many words are in the text"""
     try:
-        # file_for_twords = open(get_file_twords, encoding="UTF-8").read()
-        # if len(file_for_twords) <= 0:
-        #     data_from_twords = 0
-        #     return ErrorCode.EMPTY_FILE_ERROR, data_from_twords
+        if len(get_file_twords) <= 0:
+            data_from_twords = 0
+            return ErrorCode.EMPTY_FILE_ERROR, data_from_twords
         tokenized_sentence = word_tokenize(get_file_twords)
         data_from_twords = len(tokenized_sentence)
-        return data_from_twords
+        return ErrorCode.NO_ERROR, data_from_twords
     except FileNotFoundError:
         data_from_twords = 0
         return ErrorCode.PATH_ERROR, data_from_twords
@@ -121,7 +119,6 @@ def freqdist_count(get_file_fdist_count, get_data_count):
     FreqDist Count - Count how many times a certain word appears in the text
     """
     try:
-        # file_for_fdist_count = open(get_file_fdist_count, encoding="UTF-8").read()
         get_file_fdist_count = get_file_fdist_count.lower()
         tokenizer = TreebankWordTokenizer()
         fdist_count_tokenized = tokenizer.tokenize(get_file_fdist_count)
@@ -131,7 +128,7 @@ def freqdist_count(get_file_fdist_count, get_data_count):
         fdist_count = FreqDist(fdist_count_tokenized)
         get_data_count = get_data_count.lower()
         data_from_count = fdist_count[get_data_count]
-        return data_from_count
+        return ErrorCode.NO_ERROR, data_from_count
     except FileNotFoundError:
         data_from_count = 0
         return ErrorCode.PATH_ERROR, data_from_count
@@ -143,15 +140,14 @@ def freqdist_count(get_file_fdist_count, get_data_count):
 def freqdist_max(get_file_fdist_max):
     """FreqDist Max - Shows most repeated word"""
     try:
-        # file_for_fdist_max = open(get_file_fdist_max, encoding="UTF-8").read()
         tokenizer = TreebankWordTokenizer()
         fdist_max_tokenized = tokenizer.tokenize(get_file_fdist_max)
         if len(fdist_max_tokenized) <= 0:
             data_from_max = 0
-            return data_from_max
+            return ErrorCode.EMPTY_FILE_ERROR, data_from_max
         fdist_max = FreqDist(fdist_max_tokenized)
         data_from_max = fdist_max.max()
-        return data_from_max
+        return ErrorCode.NO_ERROR, data_from_max
     except FileNotFoundError:
         data_from_max = 0
         return ErrorCode.PATH_ERROR, data_from_max
@@ -163,7 +159,6 @@ def freqdist_max(get_file_fdist_max):
 def freqdist_plot(get_file_fdist_plot):
     """FreqDist Plot - Shows a graph with words frequency"""
     try:
-        # file_for_fdist_plot = open(get_file_fdist_plot, encoding="UTF-8").read()
         tokenizer = TreebankWordTokenizer()
         fdist_plot_tokenized = tokenizer.tokenize(get_file_fdist_plot)
         if len(fdist_plot_tokenized) <= 0:

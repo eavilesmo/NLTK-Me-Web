@@ -10,29 +10,24 @@
             {% csrf_token %}
             <div class="background_option">
                 <div class="heading_option">
-                    <h1>{{ dict_EN.button_stopwords }}</h1>
+                    <h1>{{ dict_EN.button_tok_text }}</h1>
                 </div>
                 <div class="column-container_option">
                     <div class="information_option">
                         <h5>{{ dict_EN.information_title }}</h5>
-                        <p>{{ dict_EN.stopwords_rem_description }}</p>
-                        <img src="/static/stopwords.png"alt="..." height="200px" width="410px">
+                        <p>{{ dict_EN.tok_text_description }}</p>
+                        <img src="/static/tok-text.png" alt="..." height="200px" width="410px">
                     </div>
                     <div class="select-file_option">
                         <label for="select-file" class="form-label">{{ dict_EN.select_file }}</label>
-                        <input class="form-control" name="send_button" type="file" accept=".txt" id="select-file">
+                        <input class="form-control" name="send_button" type="file" accept=".txt" id="select-file" required>
                     </div>
                     <div class="save-file_option">
-                        <p>{{ dict_EN.select_language }}</p>
-                        <select class="form-control" id="select-language" name="select-language">
-                            <option value="english">English</option>
-                            <option value="spanish">Spanish</option>
-                        </select>
                         <label for="save-file">{{ dict_EN.name_file }}</label>
-                        <input type="text" id="save-file" name="save-file">
+                        <input type="text" id="save-file" name="save-file" required>
                     </div>
                     <div class="button-send">
-                        <input type="submit" name="send" class="btn" value={{ dict_EN.send_button_stopwords }}>
+                        <input type="submit" name="send" class="btn" value={{ dict_EN.send_button_tok }}>
                     </div>
                     <div class="button-home">
                         <button type="button" class="btn" onclick="window.location.href='/home'">{{ dict_EN.back_home }}</button>

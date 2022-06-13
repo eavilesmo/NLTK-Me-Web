@@ -1,82 +1,20 @@
 <html>
     <head>
-        <title>NTLK-Me!</title>
+        <title>{{ dict_EN.web_title }}</title>
         {% load static %}
         <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-        <!-- <link rel="stylesheet" type="text/css" href="/static/my_css.css"> -->
+        <link rel="stylesheet" type="text/css" href="/static/my_css.css">
     </head>
     <body>
-        <style>
-            .btn {
-                font-style: italic;
-                font-weight: bold;
-                color: #000000;
-                background-color: #FFFFFF;
-                box-shadow: 8px 6px 10px #4E4A4A;
-            }
-            body {
-                margin: 0;
-                padding: 0;
-            }
-            .color1 {
-                background-color: #FFCDDD;
-                height: 100%;
-                width: 100%;
-            }
-
-            .color2 {
-                background-color: #EA99D5;
-                height: 100%;
-                width: 95%;
-            }
-
-            .color3 {
-                background-color: #B762C1;
-                height: 100%;
-                width: 90%;
-            }
-
-            .color4 {
-                background-color: #8946A6;
-                height: 100%;
-                width: 85%;
-            }
-            .fade-in-text {
-                position: absolute;
-                top: 50%;
-                transform: translate(0, -50%);
-                font-family: Helvetica;
-                color: white;
-                animation: fadeIn 5s;
-                margin-left: 50px;
-            }
-
-            @keyframes fadeIn {
-                0% { opacity: 0; }
-                100% { opacity: 1; }
-            }
-
-            h4 {
-                margin-bottom: -6px;
-                font-size: 50px;
-            }
-
-            h2 {
-                margin-top: -6px;
-                margin-bottom: -6px;
-                font-size: 100px;
-            }
-        </style>
-
-        <div class="color1">
-            <div class="color2">
-                <div class="color3">
-                    <div class="color4">
-                        <div class="fade-in-text">
-                            <h4><strong>Welcome to</strong></h4>
-                            <h2><strong>NLTK-Me!</strong></h2>
-                            <p>An application based in the NLTK library for Python</p>
-                            <button type="button" class="btn" onclick="window.location.href='/home'">Try Me!</button>
+        <div class="color1_welcome">
+            <div class="color2_welcome">
+                <div class="color3_welcome">
+                    <div class="color4_welcome">
+                        <div class="fade-in-text_welcome">
+                            <h4 class="h4_welcome"><strong>{{ dict_EN.welcome_text_1 }}</strong></h4>
+                            <h2 class="h2_welcome"><strong>{{ dict_EN.welcome_text_2 }}</strong></h2>
+                            <p>{{ dict_EN.welcome_description }}</p>
+                            <button type="button" class="btn" onclick="window.location.href='/home'">{{ dict_EN.welcome_button }}</button>
                         </div>
                     </div>
                 </div>
