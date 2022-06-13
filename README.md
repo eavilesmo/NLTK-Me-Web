@@ -23,36 +23,36 @@ Navigate to: http://127.0.0.1:8000
 
 Note: step 2 and onwards must be executed from the terminal, possibly requiring root privileges
 
-1) Install Docker \
+1) Install Docker:
   https://www.docker.com/products/docker-desktop/
-2) Go to Terminal \
-3) Introduce the following command:  \
-    |docker build -t exchange github.com/eavilesmo/CRM-API#main| \
-4) Introduce the following command: \
-    |docker run --publish 8000:5000 exchange| \
-4) Introduce the following command: \
-    |curl localhost:8000| \
-5) Navigate to: \
-    |http://127.0.0.1:8000| \
+2) Go to Terminal
+3) Introduce the following command:
+    docker build -t exchange github.com/eavilesmo/CRM-API#main
+4) Introduce the following command:
+    docker run --publish 8000:5000 exchange
+4) Introduce the following command:
+    curl localhost:8000
+5) Navigate to:
+    http://127.0.0.1:8000
 6) Enjoy!
 
 ## Screenshots
 
 Welcome Page
 
-![Welcome Page] (https://raw.githubusercontent.com/eavilesmo/NLTK-Me-Web/main/welcome.png)
+![welcome-page](https://user-images.githubusercontent.com/72768790/173426150-08f4e47e-492e-499d-8726-3a3ee8b0e201.png)
 
 Home Page
 
-![Home Page] (https://github.com/eavilesmo/NLTK-Me-Web/blob/main/home.jpg?raw=true)
+![home-page](https://user-images.githubusercontent.com/72768790/173426331-828531c6-67c6-455c-a358-fda70d84aabf.png)
 
 Tokenize A Text Page
 
-![Tokenize A Text Page] (https://github.com/eavilesmo/NLTK-Me-Web/blob/main/tok-text-screenshot.png)
+![tokenize-text-page](https://user-images.githubusercontent.com/72768790/173426377-cccacd52-5d60-444c-b0cb-382aaee599c0.png)
 
 Total Count of Words Page
 
-![Total Count of Words Page] (https://github.com/eavilesmo/NLTK-Me-Web/blob/main/count-total-screenshot.jpg?raw=true)
+![count-total-page](https://user-images.githubusercontent.com/72768790/173426452-e5806016-9217-4141-a26d-157c8f7deb70.png)
 
 ## Next Steps
 - Implement unit testing with Unittest or Pytest
